@@ -26,7 +26,7 @@
 </div>
 
 <div class="text-center">
-    <h2> All Todoa</h2>
+    <h2> All Todos</h2>
 <div class="row justify-content-center">
     <div class="col-lg-6">
         <table>
@@ -42,7 +42,7 @@
             <tbody>
                 @php $counter=1 @endphp
 
-                @foreach($todod as todo)
+                @foreach($todos as todo)
                 <tr>
                     <th>{{$counter}}</th>
                     <td>{{$todo->title}}</td>
