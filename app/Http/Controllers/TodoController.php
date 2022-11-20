@@ -68,7 +68,8 @@ class TodoController extends Controller
      */
     public function edit($id)
     {
-        //
+        $todo = Todo::where('id',$id)->first();
+        return view('edit-todo', compact('todo'));
     }
 
     /**

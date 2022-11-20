@@ -9,7 +9,6 @@
 </head>
 <body>
 
-<h1>Hello, world</h1>
 
 <div class="text-center mt-5" >
     <h2>Add Todo</h2>
@@ -29,7 +28,7 @@
     <h2> All Todos</h2>
 <div class="row justify-content-center">
     <div class="col-lg-6">
-        <table>
+        <table class="table table-bordered">
             <thead>
                 <tr>
                     <th scope="col">#</th>
@@ -42,7 +41,7 @@
             <tbody>
                 @php $counter=1 @endphp
 
-                @foreach($todos as todo)
+                @foreach($todos as $todo)
                 <tr>
                     <th>{{$counter}}</th>
                     <td>{{$todo->title}}</td>
@@ -56,7 +55,7 @@
                     </td>
                     <td>
                         <a href="{{route('todos.edit',['todo'=>$todo->id])}}" class="btn btn-info">Edit</a>
-                        <a href="{{route('todos.destory',['todo'=>$todo->id])}}" class="btn btn-danger">Delete</a>
+                        <a  class="btn btn-danger">Delete</a>
                     </td>
 
                 </tr>
@@ -68,7 +67,8 @@
 </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
 </body>
 </html>
