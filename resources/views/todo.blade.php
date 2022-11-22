@@ -55,7 +55,7 @@
                     </td>
                     <td>
                         <a href="{{route('todos.edit',['todo'=>$todo->id])}}" class="btn btn-info">Edit</a>
-                        <form style="display: inline" action="{{route('todos.destroy',['todo'=>$todo->id])}}" method="post"> 
+                        <form style="display: inline" action="{{route('todos.destroy',['todo'=>$todo->id])}}" method="POST"> 
                                         @csrf
                                         @method('delete')  
                                         <button class="btn btn-danger btn-sm ">
