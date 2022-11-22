@@ -81,7 +81,16 @@ class TodoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator = Validator::make($request->all(),
+        [
+            "title"=>'required'
+        ]);
+
+        $to_update = Todo::find($id);
+        $to_update->title = $request->title;
+        $to_update->is_completed = $request->is_completed;
+        $to_update->save();
+        return redirect('/todos');
     }
 
     /**
@@ -92,6 +101,6 @@ class TodoController extends Controller
      */
     public function destroy($id)
     {
-        //
+       
     }
 }
