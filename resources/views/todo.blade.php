@@ -58,7 +58,7 @@
                         <form style="display: inline" action="{{route('todos.destroy',['todo'=>$todo->id])}}" method="POST"> 
                                         @csrf
                                         @method('delete')  
-                                        <button class="btn btn-danger btn-sm ">
+                                        <button class="btn btn-danger ">
                                         delete
                                         </button>
                                     </form> 
