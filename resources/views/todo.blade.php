@@ -10,18 +10,26 @@
 <body>
 
 
-<div class="text-center mt-5" >
+<div class="text-center mt-5 container" >
     <h2>Add Todo</h2>
-    <form class="row g-3 justify-content-center" method="POST" action="{{route('todos.store')}}">
+    <form class="row g-3 justify-content-center mt-2 " method="POST" action="{{route('todos.store')}}" enctype="multipart/form-data">
         @csrf
-        <div class="col-6">
+        <div class="row">
             <input type="text" class="form-control" name="title" placeholder="Title">
+        </div>
+
+
+        <div class="row">
+            <label for="example">choose photo</label>
+            <input type="file" class="form-control" name="image" >
         </div>
 
         <div class="col-auto">
             <button type="submit" class="btn btn-primary mb-3">submit</button>
         </div>
     </form>
+
+    
 </div>
 
 <div class="text-center">

@@ -39,13 +39,22 @@ class TodoController extends Controller
      */
     public function store(Request $request)
     {
+
         $validator = Validator::make($request->all(),
         [
-            "title"=>'required'
+            "title"=>'required',
+            'image'=>'required'
         ]);
 
+        // save photo in folder
+        $file_extension = $request->file('image')->extension();
+        $file_name = time().'.'.$file_extension;
+        $path= 'puplic/images';
+        $request->file('image')->move($path, $file_name);
+
         Todo::create([
-            'title'=>$request->get("title")
+            'title'=>$request->get("title"),
+            'image'=>$file_name
         ]);
     }
 
