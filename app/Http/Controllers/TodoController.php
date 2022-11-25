@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Validator;
 use App\Models\Todo;
-
 use Illuminate\Http\Request;
+// use App\Exports\TodoExport;
+use Excel;
+use Maatwebsite\Excel\Concerns\FromCollection;
 
 class TodoController extends Controller
 {
@@ -113,5 +115,16 @@ class TodoController extends Controller
         $to_delete = Todo::find($id);
         $to_delete->delete();
         return redirect('/todos');
+    }
+
+    public function exportCsv()
+    {
+        return Excel::download( new DataExport, 'TodoList.csv');
+    }
+}
+class DataExport implements FromCollection{
+    function collection(){
+    $todos = Todo::all();
+        return $todos;
     }
 }

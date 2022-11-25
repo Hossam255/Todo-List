@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TodoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::resource('todos',\App\Http\Controllers\TodoController::class);
+Route::get('exportcsv',[TodoController::class,'exportCsv']);
